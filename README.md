@@ -11,14 +11,20 @@ DeepSeek V4 Pro 二创形象「鲸鱼娘·大肥鱼」的透明桌面宠物。
 - **三种模式**：自由散步 / 跟随鼠标 / 原地待着（右键菜单切换）
 
 - **互动**：
-  - 左键按住：拖拽（会侧身朝向拖动方向，松手会说话）
+  - 左键按住：拖拽（会侧身朝向拖动方向，松手会说话；快速甩动会触发「快速拖拽」专属台词 + 晕眩摇摆）
   - 单击：蹦跳 + 回嘴（互动台词）+ 气泡右侧弹出聊天小圆钮（矢量图标，与气泡同步消失，点击打开聊天输入框）
-  - 双击：喂食面板（小鱼干 / 蛋糕 / 棒棒糖 / 团子 / 钻石）
-  - 右键：完整菜单（模式 / 大小 / 喂食 / 说句话 / 显示/隐藏 / 鼠标穿透 / 置顶 / 开机自启 / 退出；托盘右键是同款菜单，穿透后可从托盘解除）
+  - 点击分区：按点到的位置（头 / 肚子 / 尾巴）说不同台词，并冒出爱心 ♥ / 星光 ✦ / 音符 ♪ 粒子
+  - 长按 0.6 秒：摸头（爱心粒子 + 摸头台词）
+  - 三连击（1.2 秒内点 3 下）：转圈庆祝 + 星星粒子 + 专属台词
+  - 悬停：轻微摇摆，偶尔打招呼
+  - 双击：喂食面板（小鱼干 / 蛋糕 / 棒棒糖 / 团子 / 钻石 / 披萨 / 拉面 / 饺子 / 咖啡 / 奶茶 / 炸鸡）
+  - 右键：完整菜单（模式 / 大小 / 转个圈 / 打个盹 / 一起玩 / 说句话 / 设置 Key / 显示隐藏 / 鼠标穿透 / 置顶 / 开机自启 / 退出；托盘右键是同款菜单，穿透后可从托盘解除）
 
-- **台词系统**：日常随机台词 + 互动回嘴 + 思维链心声（灰色斜体括号气泡，小概率冒出），全部取材自社区 DS 梗
+- **动态动作与特效**：呼吸 / 摇摆 / 蹦跳 / 眨眼 / 转圈 / 晕眩摇摆 / 悬停摇摆 / 进食 / 打盹（60 秒无互动自动睡着，点一下就叫醒）/ 爱心·星星·音符粒子飘落；转向交叉淡化、加减速惯性、散步自动休息、说话冷却；气泡与聊天按钮同步消失、弹窗自动夹入屏幕内
 
-- **细节**：呼吸 / 摇摆 / 蹦跳 / 进食动画、转向交叉淡化、加减速惯性、散步自动休息、说话冷却；气泡与聊天按钮同步消失、弹窗自动夹入屏幕内
+- **台词系统**：日常随机台词 + 互动回嘴 + 思维链心声（灰色斜体括号气泡，小概率冒出）+ 冷笑话 + 自言自语（偶尔念一句诗）+ 按时段问候（早/午/晚/深夜）+ 分区/摸头/三连击/唤醒/玩耍/快速拖拽等交互台词，全部取材自社区 DS 梗与多个开源 DeepSeek 桌宠工程
+
+- **主动关心**：久坐 25 分钟提醒站起来活动、30 分钟没投喂会喊饿
 
 - 托盘图标、窗口置顶、鼠标穿透、开机自启、配置记忆（config.json）；穿透 / 置顶状态重启后自动恢复
 
@@ -90,7 +96,7 @@ pyinstaller --noconfirm --onefile --windowed --name 大肥鱼桌宠 --add-data "
 | 启动桌宠.bat | 启动脚本（自动选择 venv 或系统 Python） |
 | requirements.txt | 依赖 |
 | 桌宠.spec | PyInstaller 打包配置（含新依赖收集） |
-| test_pet.py | 自动化功能测试（QtTest 模拟鼠标/键盘交互，覆盖单击/双击/拖拽/聊天/喂食等 47 项） |
+| test_pet.py | 自动化功能测试（QtTest 模拟鼠标/键盘交互，覆盖单击/双击/拖拽/聊天/喂食/分区点击/三连击/打盹/粒子/快速拖拽/主动关心等 79 项） |
 
 ## 贡献与致谢
 
@@ -103,6 +109,24 @@ pyinstaller --noconfirm --onefile --windowed --name 大肥鱼桌宠 --add-data "
 ## 台词梗来源
 
 台词均取自 DeepSeek / 鲸鱼娘 / 大肥鱼社区梗（D指导去吃饭、吃白饭、梁文锋会议三连、"才不是大肥鱼"、思维链心声等），感谢社区整活。
+
+扩充台词时采集参考了以下 GitHub 上的 DeepSeek 桌宠工程：
+
+- [QCYTSN/ds-local-pet](https://github.com/QCYTSN/ds-local-pet) —— 本地优先大肥鱼（日常/互动/内心OS/状态/长短按台词）
+- [YunYueSama/codex-deepseek-pet](https://github.com/YunYueSama/codex-deepseek-pet) —— Codex 大肥鱼（随机动作/点击互动台词）
+- [chenthreegold/deepseek-whale-pet](https://github.com/chenthreegold/deepseek-whale-pet) —— 鲸鱼娘 Codex 桌宠（语录/冷笑话/时段问候/睡觉唤醒）
+- [lov0vo/dsh-whale-maid](https://github.com/lov0vo/dsh-whale-maid) —— 鲸鱼女仆十状态桌宠（分区摸头台词/三连击/主动关心/爱心星星音符粒子）
+- [gmskywalker/deepseek-fat-fish-codex-pet](https://github.com/gmskywalker/deepseek-fat-fish-codex-pet) —— 大肥鱼 Codex 动画桌宠
+- [sjmsltx/deepseek-desktop-pet](https://github.com/sjmsltx/deepseek-desktop-pet) —— 双角色陪伴桌宠（问候/思考/情绪台词）
+- [asgaerg/desktop-pet](https://github.com/asgaerg/desktop-pet) —— 桌面 AI 伴侣（自言自语念句子玩法）
+- [FlytoMAYDAY80/dsh-pet](https://github.com/FlytoMAYDAY80/dsh-pet) —— 像素小鲸鱼桌宠（待机/工作/完成/离线状态图）
+- [xiaoshihou514/dsh-desktop-pet](https://github.com/xiaoshihou514/dsh-desktop-pet) —— 鲸鱼娘桌宠（眨眼/睡眠/唤醒状态机）
+- [nolodjska/dsh-dafeiyu](https://github.com/nolodjska/dsh-dafeiyu) —— DSH Agent 状态台词
+- [Egger0/desk-pet](https://github.com/Egger0/desk-pet) —— 透明动画桌宠 + DeepSeek 余额显示
+- [ymhyyds/DesktopPet](https://github.com/ymhyyds/DesktopPet) —— Qt6 + Live2D 桌宠（DeepSeek 对话 + Edge TTS）
+- [waterfeet/DoroPet](https://github.com/waterfeet/DoroPet) —— Doro 桌宠（PyQt5 + DeepSeek 等多模型）
+- [Maboroshinatsu/maibot-deskpet-plugin](https://github.com/Maboroshinatsu/maibot-deskpet-plugin) —— MaiBot Live2D 桌宠插件
+- [anneheartrecord/dsh-desk-pet](https://github.com/anneheartrecord/dsh-desk-pet) / [cpp285/OceanPet](https://github.com/cpp285/OceanPet) —— macOS 桌宠
 
 ## 协议
 
